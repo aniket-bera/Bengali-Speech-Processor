@@ -1,4 +1,3 @@
-/*
 CREATE TABLE AudioDetails (
     job_id NVARCHAR(255) PRIMARY KEY,
     fileName NVARCHAR(max),
@@ -12,9 +11,7 @@ CREATE TABLE AudioDetails (
     duration FLOAT,
     jsonData NVARCHAR(max)
 )
-*/
 
-/*
 CREATE PROCEDURE InsertAudioDetails
     @job_id NVARCHAR(255),
     @fileName NVARCHAR(max),
@@ -34,15 +31,5 @@ BEGIN
     INSERT INTO AudioDetails (job_id, fileName, wavFilePath, fileSize, chunkPath, nChannels, sampWidth, framerate, nFrames, duration, jsonData)
     VALUES (@job_id, @fileName, @wavFilePath, @fileSize, @chunkPath, @nChannels, @sampWidth, @framerate, @nFrames, @duration, @jsonData);
 END;
-*/
-
-/*
-drop procedure InsertAudioDetails;
-*/
-
-/*
-drop table AudioDetails;
-*/
-
 
 select * from demodb1.dbo.AudioDetails;
