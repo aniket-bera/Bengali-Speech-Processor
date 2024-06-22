@@ -114,6 +114,3 @@ def loadAudio(path):
     wav.close()
     
     return chunkPath
-
-if __name__=="__main__":
-    loadAudio("testBN1.wav")
