@@ -45,7 +45,7 @@ Bengali-Speech-Processor is a Python-based project designed to process audio fil
 - `getAudioData.py`: Contains functions to process the audio file, split it into chunks, transcribe the chunks, and push the data to the database.
 - `dbConn.py`: Handles the database connection and operations.
 - `main.py`: Entry point of the application which invokes the processing on the given audio file.
-- `AudioDetails.sql`: SQL script to create the `AudioDetails` table and `InsertAudioDetails` stored procedure.
+- `DBdetails.sql`: SQL script to create the `AudioDetails` table and `InsertAudioDetails` stored procedure.
 
 ### Database
 
