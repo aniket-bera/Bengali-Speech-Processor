@@ -97,4 +97,4 @@ For any questions or suggestions, please reach out to [aniketbera.ab@gmail.com](
 
 ---
 
-Thank you for using BengaliAudioProcessor! We hope it helps you process and transcribe your Bengali audio data effectively.
+Thank you for using Bengali-Speech-Processor! We hope it helps you process and transcribe your Bengali audio data effectively.
