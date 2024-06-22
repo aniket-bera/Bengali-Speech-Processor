@@ -3,10 +3,10 @@ from datetime import datetime
 
 def connection():
     # Connection details
-    server = <server_name>
-    database = <database_name>
-    username = <username>
-    password = <password>
+    server = 'YOUR_SERVER_NAME'
+    database = 'YOUR_DATABASE_NAME'
+    username = 'YOUR_USERNAME'
+    password = 'YOUR_PASSWORD'
     
     # Create connection string
     connStr = (
