@@ -33,7 +33,7 @@ Bengali-Speech-Processor is a Python-based project designed to process audio fil
 
 1. Prepare your audio file and place it in the project directory.
 
-2. Update the database connection details in `dbConn.py` to match your SQL Server setup.
+2. Update Azure SQL Database connection details in `dbConn.py`.
 
 3. Run the script with your audio file as an argument:
     ```bash
@@ -43,53 +43,15 @@ Bengali-Speech-Processor is a Python-based project designed to process audio fil
 ### File Descriptions
 
 - `getAudioData.py`: Contains functions to process the audio file, split it into chunks, transcribe the chunks, and push the data to the database.
-- `dbConn.py`: Handles the database connection and operations.
+- `dbConn.py`: Manages Azure SQL Database connection and operations.
 - `main.py`: Entry point of the application which invokes the processing on the given audio file.
-- `DBdetails.sql`: SQL script to create the `AudioDetails` table and `InsertAudioDetails` stored procedure.
+- `DBdetails.sql`: SQL script for creating the required Azure SQL Database table and stored procedure.
 
 ### Database
 
-The project uses a SQL Server database. Execute the SQL script in `AudioDetails.sql` to create the required table and stored procedure.
+The project uses a Azure SQL database. Execute the SQL script in `AudioDetails.sql` to create the required table and stored procedure.
 
-#### Example Table and Procedure Creation Script
 
-```sql
--- Table Creation for 'AudioDetails'
-CREATE TABLE AudioDetails (
-    job_id NVARCHAR(255) PRIMARY KEY,
-    fileName NVARCHAR(max),
-    wavFilePath NVARCHAR(max),
-    fileSize BIGINT,
-    chunkPath NVARCHAR(max),
-    nChannels INT,
-    sampWidth INT,
-    framerate INT,
-    nFrames INT,
-    duration FLOAT,
-    jsonData NVARCHAR(max)
-);
-
--- Procedure Creation for 'InsertAudioDetails'
-CREATE PROCEDURE InsertAudioDetails
-    @job_id NVARCHAR(255),
-    @fileName NVARCHAR(max),
-    @wavFilePath NVARCHAR(max),
-    @fileSize BIGINT,
-    @chunkPath NVARCHAR(max),
-    @nChannels INT,
-    @sampWidth INT,
-    @framerate INT,
-    @nFrames INT,
-    @duration FLOAT,
-    @jsonData NVARCHAR(max)
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    INSERT INTO AudioDetails (job_id, fileName, wavFilePath, fileSize, chunkPath, nChannels, sampWidth, framerate, nFrames, duration, jsonData)
-    VALUES (@job_id, @fileName, @wavFilePath, @fileSize, @chunkPath, @nChannels, @sampWidth, @framerate, @nFrames, @duration, @jsonData);
-END;
-```
 
 ### Contact
 
